@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Navigation page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel ="stylesheet" href="css_files/index.css">
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="js/cycle2.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel ="stylesheet" href="css_files/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Inconsolata|Roboto|Montserrat|Abril+Fatface" rel="stylesheet">
+  
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-expand-md bg-dark navbar-dark" style="background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);">
+  <a class="navbar-brand" href="#">Obyed and Associates</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav"> 
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">LogOut</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+<br>
+<div class="container-fluid">
+  <div class="row">
+        <div class="col-sm-4" id = "col-sm-4-form">
+          <p class="p-message">For Free Consultation Contact us</p>
+        <form action="#">
+          <div class="form-group">
+            <label class="sr-only" for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="subject">Subject</label>
+            <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="message">Message</label>
+            <input type="text" class="form-control" id="message" placeholder="Message" name="message">
+          </div>
+          <button type="submit" class="btn btn-default" id="btn_submit"><span class="glyphicon glyphicon-send"></span>Submit</button>
+        </form>
+        </div>
+      <div class="col-sm-8">
+        <div id="slideshow" class="cycle-slideshow"
+        data-cycle-fx="fade"
+        data-cycle-manual-fx="fade"
+        data-cycle-pager-fx="fade"
+        data-cycle-manual-speed="600"
+        data-cycle-prev="#prev"
+        data-cycle-next="#next"
+        data-cycle-speed="600"
+        data-cycle-timeout="3000"
+        data-cycle-pager="#pager"
+        data-cycle-pager-template="<a href='#''><img src='{{src}}' width=150 height=100></a>" style="background: rgb(0,0,0,0.5);">
+          <img src="images/slide1.jpg" class="slide">
+          <img src="images/slide2.jpg" class="slide">
+          <img src="images/slide3.jpg" class="slide">
+          <img src="images/slide4.jpg" class="slide">
+          <img src="images/slide5.jpg" class="slide">
+          <img src="images/slide6.jpg" class="slide">
+        </div>
+      </div>
+      </div>
+<h2 style="margin-bottom: 2%">Our Services</h2>
+    <div class="card-deck">
+      <div class="card">
+        <div class="header text-center">
+          <img src="images/law.png"><p style="font-size: 26px; margin-top: 6%"><q>Compromise is the best and cheapest lawyer.</q><br>-Stevenson</p>
+        </div>
+        <div class="card-body" style="background-color: #ff6348">
+            <ul>
+              <li>Administrative Law</li>
+              <li>Aviation Matters</li>
+              <li>Civil Litigation</li>
+              <li>Constitutional Law</li>
+              <li>Environmental Law</li>
+            </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="header text-center">
+          <img src="images/law1.png"><p style="font-size: 26px; margin-top: 6%"><q>People do not win people fights. Lawyers do.</q><br>-Augustine</p>
+        </div>
+        <div class="card-body"  style="background-color: #05c46b">
+          <ul>
+              <li>Admiralty and Shipping</li>
+              <li>Banking Litigation</li>
+              <li>Commercial Litigation</li>
+              <li>Contracts</li>
+              <li>Global Investment and Citizenship</li>
+            </ul>
+          </div>
+      </div>
+      <div class="card">
+        <div class="header text-center">
+          <img src="images/law2.png"><p style="font-size: 26px; margin-top: 6%"><q>A lawyer who does not know men is handicapped.</q><br>-Dunbar</p>
+        </div>
+        <div class="card-body"  style="background-color: #FFC312">
+          <ul>
+              <li>Alternative Dispute Resolution</li>
+              <li>Business Setup</li>
+              <li>Company Matters</li>
+              <li>Entertainment and Media Litigation</li>
+              <li>Government Contracts and Litigation</li>
+            </ul>
+          </div>
+      </div>
+      <div class="card">
+        <div class="header text-center">
+          <img src="images/law3.png"><p style="font-size: 26px; margin-top: 6%"><q>He is no lawyer who cannot take two sides.</q><br>-Lamb</p>
+        </div>
+        <div class="card-body" style="background-color: #12CBC4">
+          <ul>
+              <li>Company Formation and Registration</li>
+              <li>Criminal Prosecution and Defence</li>
+              <li>Domestic and International Arbitration</li>
+              <li>Family Matters and Child Custody</li>
+              <li>More</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+</div>
+<div class="footer">
+  <p>&copyAll rights reserved. Developed and maintained by Ishaq Ali</p>
+  <span id="span_contact"><img src="images/email.png"></span><p class="p_contact">ishaq.ali@northsouth.edu</p>
+  <span id="span_contact"><img src="images/location.png"></span><p class="p_contact">Dhaka, Bangladesh</p>
+  </div>
+</div> 
+</div>
+</body>
+</html>
