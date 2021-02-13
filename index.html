@@ -5,59 +5,72 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel ="stylesheet" href="css_files/index.css">
+  <link rel="stylesheet"  href="css_files/lightslider.css"/>
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/cycle2.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <link rel ="stylesheet" href="css_files/index.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Inconsolata|Roboto|Montserrat|Abril+Fatface" rel="stylesheet">
-  
+  <script src="js/lightslider.js"></script>
+  <script>
+   $(document).ready(function() {
+    $("#content-slider").lightSlider({
+      loop:true,
+      keyPress:true
+    });
+  });
+</script>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-expand-md bg-dark navbar-dark" style="background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);">
-  <a class="navbar-brand" href="#">Obyed and Associates</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav"> 
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">LogOut</a>
-      </li>    
-    </ul>
-  </div>  
-</nav>
-<br>
-<div class="container-fluid">
-  <div class="row">
-        <div class="col-sm-4" id = "col-sm-4-form">
-          <p class="p-message">For Free Consultation Contact us</p>
-        <form action="#">
+  <nav class="navbar sticky-top navbar-inverse navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Obyed and Associates</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav"> 
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">LogOut</a>
+        </li>    
+      </ul>
+    </div>  
+  </nav>
+  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-4" id = "col-sm-4-form">
+        <p class="p-message">Free Consultation</p>
+        <form action="php/contact.php" method="post" class="ajax">
           <div class="form-group">
             <label class="sr-only" for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+            <input type="text" class="form-control" id="name" placeholder="Name" name="name" required="true"> 
           </div>
           <div class="form-group">
             <label class="sr-only" for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required="true">
           </div>
           <div class="form-group">
             <label class="sr-only" for="subject">Subject</label>
-            <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+            <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject" required="true">
           </div>
           <div class="form-group">
             <label class="sr-only" for="message">Message</label>
-            <input type="text" class="form-control" id="message" placeholder="Message" name="message">
+            <textarea class="form-control" id="message" placeholder="Message" name="message" rows="2" required="true"></textarea>
           </div>
-          <button type="submit" class="btn btn-default" id="btn_submit"><span class="glyphicon glyphicon-send"></span>Submit</button>
+          <div class="alert alert-success" id="alert">  
+            <strong>Message Sent!</strong>
+          </div>
+          <button type="submit" class="btn btn-default" id="btn_submit">Submit</button>
         </form>
-        </div>
-      <div class="col-sm-8">
+      </div>
+      <script src="js/ajaxform.js"></script>   
+      <div class="col-sm-8" id = "col-sm-8-form">
         <div id="slideshow" class="cycle-slideshow"
         data-cycle-fx="fade"
-        data-cycle-manual-fx="fade"
+        data-cycle-manual-fx="scrollHorz"
         data-cycle-pager-fx="fade"
         data-cycle-manual-speed="600"
         data-cycle-prev="#prev"
@@ -66,81 +79,117 @@
         data-cycle-timeout="3000"
         data-cycle-pager="#pager"
         data-cycle-pager-template="<a href='#''><img src='{{src}}' width=150 height=100></a>" style="background: rgb(0,0,0,0.5);">
-          <img src="images/slide1.jpg" class="slide">
-          <img src="images/slide2.jpg" class="slide">
-          <img src="images/slide3.jpg" class="slide">
-          <img src="images/slide4.jpg" class="slide">
-          <img src="images/slide5.jpg" class="slide">
-          <img src="images/slide6.jpg" class="slide">
-        </div>
+        <img src="images/slide1.jpg" class="slide">
+        <img src="images/slide2.jpg" class="slide">
+        <img src="images/slide3.jpg" class="slide">
+        <img src="images/slide4.jpg" class="slide">
+        <img src="images/slide5.jpg" class="slide">
+        <img src="images/slide6.jpg" class="slide">
+        <div id="pager"></div>
       </div>
+      <div id="prev_c"><img id="prev" src="images/whiteLeftArrow.png"></div>
+        <div id="next_c"><img id="next" src="images/whiteRightArrow.png"></div>
+    </div>
+  </div>
+  <h2 style="margin-bottom: 2%">Our Services</h2>
+  <div class="card-deck">
+    <div class="card">
+      <div class="header text-center">
+        <img src="images/law.png"><p><q>Compromise is the best and cheapest lawyer.</q><br>-Stevenson</p>
       </div>
-<h2 style="margin-bottom: 2%">Our Services</h2>
-    <div class="card-deck">
-      <div class="card">
-        <div class="header text-center">
-          <img src="images/law.png"><p style="font-size: 26px; margin-top: 6%"><q>Compromise is the best and cheapest lawyer.</q><br>-Stevenson</p>
-        </div>
-        <div class="card-body" style="background-color: #ff6348">
-            <ul>
-              <li>Administrative Law</li>
-              <li>Aviation Matters</li>
-              <li>Civil Litigation</li>
-              <li>Constitutional Law</li>
-              <li>Environmental Law</li>
-            </ul>
-        </div>
-      </div>
-      <div class="card">
-        <div class="header text-center">
-          <img src="images/law1.png"><p style="font-size: 26px; margin-top: 6%"><q>People do not win people fights. Lawyers do.</q><br>-Augustine</p>
-        </div>
-        <div class="card-body"  style="background-color: #05c46b">
-          <ul>
-              <li>Admiralty and Shipping</li>
-              <li>Banking Litigation</li>
-              <li>Commercial Litigation</li>
-              <li>Contracts</li>
-              <li>Global Investment and Citizenship</li>
-            </ul>
-          </div>
-      </div>
-      <div class="card">
-        <div class="header text-center">
-          <img src="images/law2.png"><p style="font-size: 26px; margin-top: 6%"><q>A lawyer who does not know men is handicapped.</q><br>-Dunbar</p>
-        </div>
-        <div class="card-body"  style="background-color: #FFC312">
-          <ul>
-              <li>Alternative Dispute Resolution</li>
-              <li>Business Setup</li>
-              <li>Company Matters</li>
-              <li>Entertainment and Media Litigation</li>
-              <li>Government Contracts and Litigation</li>
-            </ul>
-          </div>
-      </div>
-      <div class="card">
-        <div class="header text-center">
-          <img src="images/law3.png"><p style="font-size: 26px; margin-top: 6%"><q>He is no lawyer who cannot take two sides.</q><br>-Lamb</p>
-        </div>
-        <div class="card-body" style="background-color: #12CBC4">
-          <ul>
-              <li>Company Formation and Registration</li>
-              <li>Criminal Prosecution and Defence</li>
-              <li>Domestic and International Arbitration</li>
-              <li>Family Matters and Child Custody</li>
-              <li>More</li>
-            </ul>
-          </div>
+      <div class="card-body" style="background-color: #ff6348">
+        <ul>
+          <li>Administrative Law</li>
+          <li>Aviation Matters</li>
+          <li>Civil Litigation</li>
+          <li>Constitutional Law</li>
+          <li>Environmental Law</li>
+        </ul>
       </div>
     </div>
-</div>
-<div class="footer">
-  <p>&copyAll rights reserved. Developed and maintained by Ishaq Ali</p>
-  <span id="span_contact"><img src="images/email.png"></span><p class="p_contact">ishaq.ali@northsouth.edu</p>
-  <span id="span_contact"><img src="images/location.png"></span><p class="p_contact">Dhaka, Bangladesh</p>
+    <div class="card">
+      <div class="header text-center">
+        <img src="images/law1.png"><p><q>People do not win people fights. Lawyers do.</q><br>-Augustine</p>
+      </div>
+      <div class="card-body"  style="background-color: #05c46b">
+        <ul>
+          <li>Admiralty and Shipping</li>
+          <li>Banking Litigation</li>
+          <li>Commercial Litigation</li>
+          <li>Contracts</li>
+          <li>Global Investment and Citizenship</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header text-center">
+        <img src="images/law2.png"><p><q>A lawyer who does not know men is handicapped.</q><br>-Dunbar</p>
+      </div>
+      <div class="card-body"  style="background-color: #FFC312">
+        <ul>
+          <li>Alternative Dispute Resolution</li>
+          <li>Business Setup</li>
+          <li>Company Matters</li>
+          <li>Entertainment and Media Litigation</li>
+          <li>Government Contracts and Litigation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header text-center">
+        <img src="images/law3.png"><p><q>He is no lawyer who cannot take two sides.</q><br>-Lamb</p>
+      </div>
+      <div class="card-body" style="background-color: #12CBC4">
+        <ul>
+          <li>Company Formation and Registration</li>
+          <li>Criminal Prosecution and Defence</li>
+          <li>Domestic and International Arbitration</li>
+          <li>Family Matters and Child Custody</li>
+          <li>More</li>
+        </ul>
+      </div>
+    </div>
   </div>
-</div> 
+  <h2 style="margin-top:30px">Our Achievements</h2>
+  <div class="item">
+    <ul id="content-slider" class="content-slider">
+      <li>
+        <iframe src="https://www.youtube.com/embed/Zo843C-5Xb8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+      <li>
+        <iframe src="https://www.youtube.com/embed/EZuujYud9cw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+      <li>
+        <iframe src="https://www.youtube.com/embed/PQX4epFGX_c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+      <li>
+        <iframe src="https://www.youtube.com/embed/E4wY8H6cuE4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+      <li>
+        <iframe src="https://www.youtube.com/embed/H73qsnIm5I4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+      <li>
+        <iframe src="https://www.youtube.com/embed/Ng9UgYaGchc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </li>
+    </ul>
+  </div>
+  <div class="footer">
+    <div class="row" style="background-color: black">
+      <div class="col-sm-4"><p class="footer-heading">COMPANY</p><p class="footer-body"><a href="#" class="footer-body">About us</a><br><a href="#" class="footer-body">Our services</a><br><a href="#" class="footer-body">Contacts</a><br><a href="#" class="footer-body">Blog</a></p></div>
+      <div class="col-sm-4"><p class="footer-heading">CONTACT</p><p class="footer-body">rg@supremecourt.gov.bd<br>+880 167878****<br></p>
+      </div>
+      <div class="col-sm-4"><p class="footer-heading">ADDRESS</p><p class="footer-body">Supreme Court of Bangladesh Ramna,<br>Dhaka-1000</p></div>
+    </div>
+    <div class="row" style="background-color: black">
+      <div class="col-sm-12">
+        <p><span id="copy-right">&copy</span> 2021 | All rights reserved | Developed and maintained by<br>Ishaq Ali<br>ishaq.ali@northsouth.edu</p>
+        <p>
+          <a href="https://www.facebook.com/iniloy2" target="_blank"><img src="images/facebook-footer.png" class="footer-social"></a><a href="https://www.linkedin.com/in/ishaq-niloy-541833150" target="_blank"><img src="images/linked_in_footer.png" class="footer-social"></a><a href="https://www.instagram.com/ishaqniloy" target="_blank"><img src="images/instagram-footer.png" class="footer-social"></a>
+        </p>
+      </div>  
+    </div>
+
+  </div>
 </div>
 </body>
 </html>
