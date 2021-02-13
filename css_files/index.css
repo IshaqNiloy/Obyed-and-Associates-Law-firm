@@ -1,11 +1,6 @@
-body{
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-}
 .navbar{
-	opacity: 0.9;
+	background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+	position: fixed;
 }
 p{
 	font-family: 'Montserrat';
@@ -17,12 +12,18 @@ li{
 }
 h2{
 	text-align: center;
-	font-family: 'Abril Fatface';
+	font-family: 'Abril Fatface' !important;
+	margin-bottom: 30px !important; 
 }
 
 q{
 	font-style: italic;
 }
+
+#alert{
+	display: none;
+}
+
 .header img{
 	margin-top: 15px;
 	margin-bottom: 5px;
@@ -48,23 +49,23 @@ q{
 	color: white;
 }
 .form-control::-webkit-input-placeholder {
-    color: #fff;
-    opacity: 1;
+	color: #fff;
+	opacity: 1;
 }
 /* Firefox <18 */
 .form-control:-moz-placeholder {
-    color: #fff;
-    opacity: 1;
+	color: #fff;
+	opacity: 1;
 }
 /* Firefox 19> */
 .form-control::-moz-placeholder {
-    color: #fff;
-    opacity: 1;
+	color: #fff;
+	opacity: 1;
 }
 .form-control:-ms-input-placeholder {  
-    color: #fff;
-    opacity: 1;
- 
+	color: #fff;
+	opacity: 1;
+
 }
 .radio{
 	color: #fff;	
@@ -72,9 +73,11 @@ q{
 .checkbox{
 	color: #fff;
 }
-.col-sm-2{
-	margin-left: 0px;
+
+#col-sm-4-form, #col-sm-8-form{
+	margin-bottom: 20px;
 }
+
 .footer, .row{
 	color: #fff;
 	font-family:'Roboto';
@@ -120,18 +123,17 @@ table{
 	height: 100%;
 	color: #000;
 }
-a img{
-	width: 50%;
-	height: 50%;
-	margin-top: 10px;
-	margin-left: 25%;
+
+.card:hover {
+	-ms-transform: scale(1.5); /* IE 9 */
+	-webkit-transform: scale(10); /* Safari 3-8 */
+	transition: transform .3s;
+	transform: scale(1.05); 
 }
 
-.card img:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(10); /* Safari 3-8 */
-  transition: transform .2s;
-  transform: scale(1.1); 
+.card p{
+	font-size: 26px; 
+	margin-top: 6%;
 }
 a{
 	text-decoration: none;
@@ -141,11 +143,6 @@ a{
 .card{
 	box-shadow: 5px 10px 18px #888888;
 	min-height: 460px;
-}
-
-#club{
-	box-shadow: 5px 10px 18px #888888;
-	min-height: 0%;
 }
 
 .card a
@@ -159,6 +156,7 @@ a{
 	padding-top: 2%;
 	padding-bottom: 2%;
 }
+
 .search-box:hover > .search-text
 {
 	width: 240px;
@@ -169,7 +167,7 @@ a{
 {
 	border: 5px solid white;
 }
-	
+
 .search-box
 {
 	position: absolute;
@@ -236,14 +234,14 @@ a{
 }
 
 #prev_c img {
-	width: 40%;
-	height:10%;
+	width: 20%;
 	position:absolute;
 	top:0;
 	bottom:0;
 	left:0;
 	margin:auto 0px;
 	opacity: 0.7;
+	margin-left: 15px;
 }
 
 #next_c {
@@ -255,22 +253,22 @@ a{
 	z-index:100;
 }
 #next_c img {
-	width:40%;
-	height:10%;
+	width:20%;
 	position:absolute;
 	top:0;
 	bottom:0;
 	right:0;
 	margin:auto 0px;
 	opacity: 0.7;
+	margin-right: 15px;
 }
 
 #pager {
 	height: 30%;
 	width: 100%;
 	background:rgba(0,0,0,0.5);
-    position:absolute;
-	bottom:15%;
+	position:absolute;
+	bottom:3%;
 	z-index:1000;
 	text-align:center;
 	opacity:0;
@@ -308,8 +306,7 @@ a{
 
 input{
 	margin-top: 3%;
-	background-color: #e6e6e6;
-	opacity: 0.7;
+	background-color: #fff;
 	font-size: 1.5vw;
 	font-family: 'Montserrat';
 }
@@ -320,37 +317,57 @@ input{
 
 .form-control{
 	color: #000;
+	border: 1px solid #000;
 }
 .form-control::-webkit-input-placeholder {
-    color: #000;
-    opacity: 1;
-    font-family: 'Montserrat';
+	color: #000;
+	opacity: 1;
+	font-family: 'Montserrat';
 }
 /* Firefox <18 */
 .form-control:-moz-placeholder {
-    color: #000;
-    opacity: 1;
-    font-family: 'Montserrat';
+	color: #000;
+	opacity: 1;
+	font-family: 'Montserrat';
 }
 /* Firefox 19> */
 .form-control::-moz-placeholder {
-    color: #000;
-    opacity: 1;
-    font-family: 'Montserrat';
+	color: #000;
+	opacity: 1;
+	font-family: 'Montserrat';
 }
 .form-control:-ms-input-placeholder {
-    color: #000;
-    opacity: 1;
-    font-family: 'Montserrat';
+	color: #000;
+	opacity: 1;
+	font-family: 'Montserrat';
 }
 #btn_submit{
 	margin-top: 1%;
-	margin-bottom: 3%;
 	background-color: #e6e6e6;
 	color: #000;
 	opacity: 0.7;
 	font-size: 20px;
 	font-family: 'Montserrat';
+	box-shadow: 5px 5px 10px;
+}
+
+button:active {
+  box-shadow: 5px 5px 15px;
+  transform: translateY(3px);
+}
+
+iframe{
+	width: 100%;
+	height: 250px;
+}
+
+a img{
+	margin: -1px 0px 10px 10px;
+}
+
+.footer-body a:hover{
+	text-decoration: none;
+	color: #ff471a;
 }
 
 .footer{
@@ -360,6 +377,29 @@ input{
 	width: 100%;
 }
 
+
+.footer-social{
+	background-color: white;
+	opacity: 0.6;
+}
+
+.footer img{
+	width: 35px;
+}
+
+.footer p{
+	margin-bottom: 5px;
+}
+
+.footer-social:hover{
+	opacity: 1;
+}
+
 #span_contact img{
 	width: 3%;
+}
+
+#copy-right{
+	font-size: 20px;
+	font-family: 'Montserrat';
 }
