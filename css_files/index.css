@@ -2,6 +2,47 @@
 	background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
 	position: fixed;
 }
+
+.my-modal{
+    width: 50%;
+    height: 310px;
+    z-index: 10000;
+    position: fixed;
+    margin-top: 130px;
+    margin-left: 25.5%;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    padding-top: 100px;
+    border: 1px solid rgb(0,0,0,0.1);
+    background-color: rgb(0,0,0);
+    background-color: #fff;
+}
+
+.my-modal-content{
+    text-align: center;
+    color: green;
+    font-size: 28px;
+    
+}
+
+.my-modal{
+   display: none; 
+}
+
+fa-check-circle{
+    width: 20px;
+}
+
+.fa-times{
+    float: right;
+    margin-top: -90px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+
 p{
 	font-family: 'Montserrat';
 }
@@ -18,10 +59,6 @@ h2{
 
 q{
 	font-style: italic;
-}
-
-#alert{
-	display: none;
 }
 
 .form-control{
