@@ -16,9 +16,7 @@
 			type: type,
 			data: data,
 			success: function(response) {
-				document.getElementById("alert").style.display = "block";
-				document.getElementById("slideshow").style.height = "442px";
-				document.getElementById("btn_submit").style.margin = "-1%";
+				document.getElementById("my-modal").style.display = "block";
 				document.getElementById("name").value = "";
 				document.getElementById("email").value = "";
 				document.getElementById("subject").value = "";
