@@ -16,8 +16,7 @@
     width: 10%;
 }
 
-.phone {
-    width: 50px;
+.phone, .phone-number {
     z-index: 10000;
     position: fixed;
     top: 0;
@@ -27,8 +26,48 @@
     overflow: auto;
     border: 1px solid rgb(0,0,0,0.1);
     color: #fff;
-    background-color: rgb(0,0,0,0.5);
+    background-color: rgb(253, 100, 77);
     border-radius: 50%;
+    border: 0px; 
+}
+
+.phone img {
+    width: 46.7px;
+    padding: 10%;
+}
+
+
+.phone-number-span{
+    width: 180px;
+    display: block;
+    z-index: 9;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-family: 'Montserrat';
+    text-align: center;
+     background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+}
+
+.phone-number{
+    display: block;
+    z-index: 9999;
+    height: 48px;
+    border-radius: 24px 2px 2px 24px;
+    margin-right: 40px;
+}
+
+.phone:hover {
+    cursor: pointer;
+}
+
+::selection {
+  background: none;
+}
+::-moz-selection {
+  background: none;
+}
+::-webkit-selection {
+  background: none;
 }
 
 .my-modal{
@@ -45,6 +84,10 @@
     border: 1px solid rgb(0,0,0,0.1);
     background-color: rgb(0,0,0);
     background-color: #fff;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: .4s;
 }
 
 .my-modal-content{
@@ -57,6 +100,17 @@
 .my-modal{
    display: none; 
 }
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
 
 .fa-check-circle{
     width: 20px;
@@ -275,6 +329,7 @@ a{
 }
 
 .p-message{
+    text-align: left;
 	font-size: 33px;
 	color: #000;
 	margin-top: 3%;
