@@ -1,4 +1,4 @@
- var flag = 0;
+var flag = 0;
 
 function closeModal() {
     document.getElementById("my-modal").style.display = "none";
@@ -15,3 +15,11 @@ function toggleNum() {
     }
 }
 
+function scrollToTop(){
+    var div = document.getElementById("scroll-top");
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    });
+}
