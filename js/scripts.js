@@ -16,7 +16,6 @@ function toggleNum() {
 }
 
 function scrollToTop(){
-    var div = document.getElementById("scroll-top");
     window.scrollTo({
         top: 0,
         left: 0,
